@@ -22,7 +22,7 @@ cap = cv2.VideoCapture('video2.mp4')
 
 detector = PoseDetector(staticMode=False, detectionCon=0.6)
 
-model = YOLO('Yolo_weights/yolov8n.pt')
+model = YOLO('yolov8n.pt')
 
 time_interval = 120  # 2 minutes
 last_time = int(time.time()) - time_interval  # Ensure the first message is sent immediately
@@ -77,11 +77,11 @@ while True:
         print(message_body)
 
         # Your Account SID from twilio.com/console
-        account_sid = "AC906583e5ba4c93fdf194c92d2203b5ba"
+        account_sid = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
         # Your Auth Token from twilio.com/console
-        auth_token = "05a6bfb92daa4a6a1093c64a4e7eebb5"
+        auth_token = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
         client = Client(account_sid, auth_token)
-        message = client.messages.create(to="+919945215989", from_="+14066921937", body=message_body)
+        message = client.messages.create(to="+XXXXXXXXXXXX", from_="+XXXXXXXXXXX", body=message_body)
 
         last_time = current_time
 
